@@ -2424,3 +2424,284 @@ button {
   .format-modal h3 { font-size: 1.4rem; }
   .pricing-deck { grid-template-columns: 1fr; }
 }
+
+/* ==========================================
+   FIXES & NEW COMPONENTS — v3
+   ========================================== */
+
+/* ---- .opt-hint (WAS MISSING) ---- */
+.opt-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: -4px 0 12px 34px;
+  line-height: 1.5;
+  opacity: 0.65;
+}
+
+.price-layer-card.podcast-session .opt-hint {
+  color: rgba(255,255,255,0.45);
+}
+
+/* ---- Section Subtitle ---- */
+.section-subtitle {
+  color: var(--text-muted);
+  margin-top: 20px;
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ---- Pricing Tabs ---- */
+.pricing-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 50px;
+}
+
+.pricing-tab {
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--light-border);
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.pricing-tab:hover {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.pricing-tab.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* ---- Single pricing deck (centered card) ---- */
+.pricing-deck-single {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Fix pricing-deck grid: 3 columns ---- */
+.pricing-deck {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---- Glassmorphism on pricing cards ---- */
+.price-layer-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.04);
+}
+
+.price-layer-card:hover {
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+/* ---- Studios Slider Navigation Dots ---- */
+.studios-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 0 10px;
+}
+
+.studios-nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--light-border);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.studios-nav-dot.active {
+  background: var(--black);
+  width: 28px;
+  border-radius: 4px;
+}
+
+.studios-nav-dot:hover {
+  background: var(--text-muted);
+}
+
+/* ---- Blog btn-secondary fix (light bg) ---- */
+.btn-secondary-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--light-border);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.btn-secondary-dark:hover {
+  border-color: var(--black);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+.btn-secondary-dark svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.btn-secondary-dark:hover svg {
+  transform: translateX(4px);
+}
+
+/* ---- CTA Final Section ---- */
+.cta-final {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0d1b2a 100%);
+  padding: 120px 0;
+  text-align: center;
+}
+
+.cta-final-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-final h2 {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+
+.cta-final p {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.cta-final-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-final .btn-primary:hover {
+  background: var(--off-white) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255,255,255,0.2);
+}
+
+/* ---- Floating WhatsApp CTA ---- */
+.floating-cta {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  z-index: 999;
+  transition: all 0.3s;
+  animation: ctaPulse 2s infinite;
+  text-decoration: none;
+}
+
+.floating-cta:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.6);
+}
+
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 4px 30px rgba(37,211,102,0.6), 0 0 0 8px rgba(37,211,102,0.1); }
+}
+
+/* ---- Bento cards gradients ---- */
+#bento-1 { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); }
+#bento-4 { background: linear-gradient(135deg, #1a1a2e 0%, #0d1b2a 100%); }
+
+/* ---- Footer big text visibility ---- */
+.footer-big-text {
+  opacity: 0.12;
+}
+
+/* ---- Responsive overrides for new components ---- */
+@media (max-width: 768px) {
+  .pricing-tabs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  
+  .pricing-tab {
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .pricing-deck {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  
+  .cta-final { padding: 80px 0; }
+  .cta-final-buttons { flex-direction: column; align-items: center; }
+  
+  .floating-cta {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+  }
+  
+  .floating-cta svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pricing-deck {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
