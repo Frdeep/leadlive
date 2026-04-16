@@ -5,11 +5,15 @@
    ============================================ */
 
 // ---------- YOUTUBE IFRAME API ----------
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+document.head.appendChild(tag);
+
 let ytPlayer = null;
 let isMuted = true;
 
 function onYouTubeIframeAPIReady() {
-  ytPlayer = new YT.Player('ytPlayerContainer', {
+  ytPlayer = new YT.Player('yt-player', {
     width:  '100%',
     height: '100%',
     videoId: '4sh7rP7Tfmg',
@@ -73,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- HEADER SCROLL EFFECT & PARALLAX ----------
   const header            = document.getElementById('header');
-  const ytPlayerContainer = document.getElementById('ytPlayerContainer');
+  const ytPlayerContainer = document.getElementById('yt-player');
   const heroContent       = document.querySelector('.hero-content');
   const heroSection       = document.getElementById('hero');
 
@@ -419,18 +423,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const packName = btn.dataset.pack || (card && card.dataset.name) || 'Pack';
       const packBase = card ? parseInt(card.dataset.base) : 0;
 
-      // Build WhatsApp pre-fill or redirect to configurateur
-      const isPodcast = card && card.id === 'pack-podcast-session';
-      if (isPodcast) {
-        // For podcast session, open WhatsApp
-        const msg = encodeURIComponent(
-          `Bonjour Lead Live ! 👋\nJe souhaite réserver une session Podcast.\nTarif de base : 900 €\n\nPouvons-nous échanger sur les détails ?`
-        );
-        window.open(`https://wa.me/33616435797?text=${msg}`, '_blank');
-      } else {
-        // Redirect to configurateur page
-        window.location.href = 'configurateur.html';
-      }
+      // Always redirect to configurateur
+      window.location.href = 'configurateur.html';
     });
   });
 

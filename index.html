@@ -54,7 +54,7 @@
   <section class="hero" id="hero">
     <div class="hero-video-wrapper">
       <!-- YouTube Background Video via IFrame API -->
-      <div id="ytPlayerContainer"></div>
+      <div id="yt-player"></div>
       <div class="hero-video-overlay"></div>
 
       <!-- Mute / Unmute toggle -->
@@ -128,8 +128,7 @@
     </div>
   </section>
 
-  <!-- YouTube IFrame API -->
-  <script src="https://www.youtube.com/iframe_api"></script>
+  <!-- YouTube logic initialized in JS -->
 
   <!-- ===== WELCOME SECTION ===== -->
   <section class="welcome" id="welcome">
@@ -369,6 +368,23 @@
           </div>
         </div>
 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING PODCAST SESSION ===== -->
+  <section class="pricing-section" id="pricing-podcast" style="padding-top: 40px;">
+    <div class="container">
+      <div class="section-header reveal text-center">
+        <span class="section-label">À La Carte</span>
+        <h2>Nos Packs Sessions Podcast</h2>
+        <p style="color: var(--text-muted); margin-top:20px; font-size: 1.15rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+          Des tournages clé-en-main, à la demande. Parfait pour tester le format ou pour des épisodes ponctuels.
+        </p>
+      </div>
+
+      <div class="pricing-deck" style="justify-content: center; max-width: 500px; margin-left: auto; margin-right: auto;">
         <!-- Podcast à la Séance Card (NEW) -->
         <div class="price-layer-card podcast-session reveal reveal-delay-4" id="pack-podcast-session" data-base="900" data-name="Podcast Séance">
           <div class="badge-session">🎙️ PODCAST À LA SÉANCE</div>
