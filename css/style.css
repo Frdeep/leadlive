@@ -2687,25 +2687,26 @@ button {
     flex-wrap: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding-bottom: 30px;
+    gap: 16px;
+    padding: 10px 24px 40px 24px;
     -webkit-overflow-scrolling: touch;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    scroll-padding-left: 24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .pricing-deck::-webkit-scrollbar {
-    height: 6px;
-  }
-  
-  .pricing-deck::-webkit-scrollbar-thumb {
-    background: var(--light-border);
-    border-radius: 4px;
+    display: none;
   }
 
   .price-layer-card {
-    min-width: 85%;
-    max-width: 450px;
+    min-width: 75vw;
+    max-width: 320px;
     flex-shrink: 0;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     margin: 0;
   }
 }
