@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurateur & Tarifs — Lead Live</title>
+  <meta name="description" content="Découvrez les tarifs Lead Live et générez votre devis personnalisé en temps réel.">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body class="config-page">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header scrolled" style="position: fixed; background: #fff;" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">Lead Live<span class="logo-dot"></span></a>
+      <div class="nav-right">
+        <a href="index.html" class="btn-primary" style="background: var(--light-surface); color: var(--black);">Retour</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PRICING HERO ===== -->
+  <section class="pricing-hero" style="padding: 140px 24px 60px; text-align: center; background: var(--off-white);">
+    <div class="container" style="max-width: 800px;">
+      <h1 style="font-size: clamp(2.2rem, 5vw, 3.5rem); font-family: var(--font-primary); font-weight: 800; letter-spacing: -1px; margin-bottom: 20px;">
+        Vos contenus premium <br>faits par Lead Live
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+        Découvrez nos packs clairs et épurés, ou utilisez notre assistant interactif pour construire le projet exact dont vous avez besoin.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== MAIN CONFIGURATOR AREA ===== -->
+  <main class="config-wrapper">
+    
+    <!-- OPTIONS VIEW (Grille tarifaire dynamique) -->
+    <section class="pricing-grid-view" id="pricingGridView">
+      <div class="container" style="max-width: 1200px; padding: 40px 24px;">
+        
+        <!-- Tabs -->
+        <div class="config-tabs" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 50px;">
+          <button class="tab-btn active" data-target="tab-mensuel">Abonnements</button>
+          <button class="tab-btn" data-target="tab-podcast">Podcast & Émission (À la carte)</button>
+          <button class="tab-btn" data-target="tab-reseaux">Packs Réseaux Sociaux</button>
+        </div>
+
+        <div class="plans-container" id="plansContainer">
+          <!-- Dynamic cards will be injected here by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RIGHT STICKY CART (Résumé devis) -->
+    <div class="sticky-cart" id="stickyCart">
+      <h3>Votre Devis</h3>
+      <div id="cartItems" class="cart-items">
+        <p class="empty-cart">Sélectionnez une formule ou des options pour commencer.</p>
+      </div>
+      <div class="cart-total">
+        <span>Total Mensuel / Final</span>
+        <strong id="totalPrice">0 €</strong>
+      </div>
+      
+      <!-- Lead Form (Hidden initially) -->
+      <div id="leadForm" class="lead-form" style="display: none; margin-top: 20px;">
+        <input type="text" id="clientName" placeholder="Votre nom / entreprise" required>
+        <input type="email" id="clientEmail" placeholder="Votre e-mail professionnel" required>
+        <input type="tel" id="clientPhone" placeholder="Votre téléphone" required>
+      </div>
+
+      <div class="cart-actions">
+        <button id="btnSendQuote" class="btn-primary w-full" style="margin-bottom: 10px; background: #000; font-size: 1.05rem; padding: 18px; border: 2px solid transparent; animation: pulseGlow 2s infinite;" disabled>✉️ Recevoir devis par E-mail</button>
+        <button id="btnPdfDownload" class="btn-secondary w-full" style="margin-bottom: 10px; color: #111; border-color: #ddd;" disabled>📄 Télécharger en PDF</button>
+        <button id="btnWhatsapp" class="btn-secondary w-full" style="background: #25D366; color: white; border: none; font-weight: 700;" disabled>💬 Envoyer via WhatsApp</button>
+      </div>
+    </div>
+    
+  </main>
+
+  <!-- HTML2PDF TEMPLATE (Hidden) -->
+  <div id="pdfTemplate" style="display: none; padding: 40px; font-family: 'Urbanist', sans-serif; color: #1a1a1a;">
+    <div style="border-bottom: 2px solid #000; padding-bottom: 20px; margin-bottom: 40px; display: flex; justify-content: space-between;">
+      <h2 style="margin:0; font-size:24px;">LEAD LIVE</h2>
+      <div style="text-align: right;">
+        <p style="margin:0; color:#666;">Estimation Budgétaire</p>
+        <p id="pdfDate" style="margin:5px 0 0 0; font-size:12px; color:#999;"></p>
+      </div>
+    </div>
+    <div style="margin-bottom: 30px;">
+      <p style="margin: 0 0 5px 0; color: #666;">Pour : <strong id="pdfClientName">Client</strong></p>
+    </div>
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+      <thead>
+        <tr style="border-bottom: 1px solid #ccc;">
+          <th style="padding: 12px 0;">Désignation</th>
+          <th style="padding: 12px 0; text-align: right;">Prix</th>
+        </tr>
+      </thead>
+      <tbody id="pdfTableBody">
+      </tbody>
+      <tfoot>
+        <tr>
+          <td style="padding: 20px 0; font-weight: bold; font-size: 18px;">TOTAL</td>
+          <td id="pdfTotal" style="padding: 20px 0; font-weight: bold; font-size: 18px; text-align: right;">0 €</td>
+        </tr>
+      </tfoot>
+    </table>
+    <div style="margin-top: 60px; font-size: 10px; color: #999; text-align: center;">
+      Ce document est une simulation générée automatiquement et ne constitue pas une facture juridique.<br>Lead Live — contact@leadlive.fr — +33 6 68 18 26 74
+    </div>
+  </div>
+
+  <script src="js/configurateur.js"></script>
+</body>
+</html>

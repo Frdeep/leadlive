@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead Live — Votre studio de podcast & vidéo, où vous voulez</title>
+  <meta name="description" content="Lead Live installe votre studio de podcast, émission ou clip directement chez vous. Installation, tournage multi-caméras, montage — on gère tout.">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+</head>
+<body>
+
+  <!-- ===== ANNOUNCEMENT BANNER ===== -->
+  <div class="announcement-bar" id="announcement">
+    <div class="marquee">
+      <span>🎙️ PODCAST • ÉMISSION • RÉSEAUX SOCIAUX • CLIPS — <span class="highlight">RÉSERVEZ VOTRE APPEL</span> 🎙️</span>
+      <span>🎙️ PODCAST • ÉMISSION • RÉSEAUX SOCIAUX • CLIPS — <span class="highlight">RÉSERVEZ VOTRE APPEL</span> 🎙️</span>
+      <span>🎙️ PODCAST • ÉMISSION • RÉSEAUX SOCIAUX • CLIPS — <span class="highlight">RÉSERVEZ VOTRE APPEL</span> 🎙️</span>
+      <span>🎙️ PODCAST • ÉMISSION • RÉSEAUX SOCIAUX • CLIPS — <span class="highlight">RÉSERVEZ VOTRE APPEL</span> 🎙️</span>
+      <span>🎙️ PODCAST • ÉMISSION • RÉSEAUX SOCIAUX • CLIPS — <span class="highlight">RÉSERVEZ VOTRE APPEL</span> 🎙️</span>
+      <span>🎙️ PODCAST • ÉMISSION • RÉSEAUX SOCIAUX • CLIPS — <span class="highlight">RÉSERVEZ VOTRE APPEL</span> 🎙️</span>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">Lead Live<span class="logo-dot"></span></a>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Accueil</a>
+        <a href="configurateur.html">Tarifs & Devis</a>
+        <a href="contact.html">Contact</a>
+        <a href="blogs.html">Blog</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="#" class="btn-login">Nos réalisations</a>
+        <a href="configurateur.html" class="btn-primary">
+          Faire un devis en ligne
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- ===== HERO SECTION — YOUTUBE VIDEO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-video-wrapper">
+      <!-- YouTube Background Video via IFrame API -->
+      <div id="ytPlayerContainer"></div>
+      <div class="hero-video-overlay"></div>
+
+      <!-- Mute / Unmute toggle -->
+      <button class="hero-sound-toggle" id="heroSoundToggle" aria-label="Activer le son">
+        <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" x2="17" y1="9" y2="15"/><line x1="17" x2="23" y1="9" y2="15"/></svg>
+        <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        <span class="sound-label">Son</span>
+      </button>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Studio mobile — On vient chez vous
+        </div>
+
+        <h1>
+          Votre studio de 
+          <span class="rotating-word" id="rotatingWord">
+            <span class="active">podcast.</span>
+            <span>émission.</span>
+            <span>réseaux sociaux.</span>
+            <span>clips.</span>
+          </span>
+        </h1>
+
+        <p>On installe un studio pro chez vous en 30 min. Multi-caméras, son broadcast, montage inclus — vous n'avez qu'à parler.</p>
+
+        <div class="hero-cta">
+          <a href="configurateur.html" class="btn-primary" id="heroCta">
+            Simuler votre tarif
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#services" class="btn-discover" id="discoverFormats">
+            <span>Voir nos formats</span>
+            <span class="btn-discover-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="hero-info">
+          <div class="hero-info-item">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="info-text">
+              <div class="info-label">Zone</div>
+              <div class="info-value">Paris & Île-de-France</div>
+            </div>
+          </div>
+          <div class="hero-info-item">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="info-text">
+              <div class="info-label">Installation</div>
+              <div class="info-value">30 min chrono</div>
+            </div>
+          </div>
+          <div class="hero-info-item">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="info-text">
+              <div class="info-label">Contact</div>
+              <div class="info-value"><a href="tel:0616435797">06 16 43 57 97</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <!-- ===== WELCOME SECTION ===== -->
+  <section class="welcome" id="welcome">
+    <div class="container">
+      <div class="welcome-header reveal">
+        <span class="section-label">Pourquoi Lead Live</span>
+        <h2>On amène le studio chez vous. Vous, vous amenez votre histoire.</h2>
+      </div>
+
+      <div class="welcome-features">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>100% mobile, 0% galère</h4>
+            <p>Pas besoin de vous déplacer. On arrive chez vous, dans vos bureaux ou en extérieur — avec tout le matos pro. Studio monté en 30 min.</p>
+          </div>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h4>Une équipe complète à vos côtés</h4>
+            <p>Cadreur, ingénieur son, directeur artistique — nos pros gèrent toute la technique. Vous, concentrez-vous sur votre message.</p>
+          </div>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          </div>
+          <div>
+            <h4>Montage & livraison clé en main</h4>
+            <p>On s'occupe de tout : éditing, sous-titres, habillage, sound design. Votre contenu est livré prêt à publier sous 48h.</p>
+          </div>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-4">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+          </div>
+          <div>
+            <h4>Matériel broadcast, rendu cinéma</h4>
+            <p>Caméras Sony FX3, micros Shure SM7B, éclairage Aputure, multi-caméras. Le même matos que les grands studios — chez vous.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES / FORMATS SECTION ===== -->
+  <section class="studios" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Ce qu'on fait</span>
+        <h2>Podcasts, émissions, vidéos — pour les entreprises.</h2>
+      </div>
+    </div>
+    
+    <div class="studios-slider" id="studiosSlider">
+      <div class="studio-card reveal reveal-delay-1" data-format="Podcast" role="button" tabindex="0">
+        <div class="studio-image">
+          <img src="images/podcast.jpg" alt="Podcast mobile — Studio installé chez vous" loading="lazy">
+        </div>
+        <div class="studio-info">
+          <span class="studio-name">Podcast</span>
+          <span class="studio-cta">
+            En savoir +
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="studio-card reveal reveal-delay-2" data-format="Émission" role="button" tabindex="0">
+        <div class="studio-image">
+          <img src="images/emission.jpg" alt="Émission plateau — Format talk-show sur mesure" loading="lazy">
+        </div>
+        <div class="studio-info">
+          <span class="studio-name">Émission Plateau</span>
+          <span class="studio-cta">
+            En savoir +
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="studio-card reveal reveal-delay-3" data-format="Réseaux Sociaux" role="button" tabindex="0">
+        <div class="studio-image">
+          <img src="images/reseaux.jpg" alt="Réseaux Sociaux — Contenu vertical pour marques" loading="lazy">
+        </div>
+        <div class="studio-info">
+          <span class="studio-name">Réseaux Sociaux</span>
+          <span class="studio-cta">
+            En savoir +
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="studio-card reveal reveal-delay-4" data-format="Clips" role="button" tabindex="0">
+        <div class="studio-image">
+          <img src="images/clips.jpg" alt="Clips musicaux — Production vidéo pour artistes" loading="lazy">
+        </div>
+        <div class="studio-info">
+          <span class="studio-name">Clips Musicaux</span>
+          <span class="studio-cta">
+            En savoir +
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING & CONFIGURATEUR ===== -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header reveal text-center">
+        <span class="section-label">L'Agence de Référence</span>
+        <h2>Nos Packs & Abonnements</h2>
+        <p style="color: var(--text-muted); margin-top:20px; font-size: 1.15rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+          L'abonnement mensuel correspond au service global de l'agence. Il nous engage à produire l'intégralité de vos contenus de façon régulière, qu'on soit <strong>en Studio</strong> ou <strong>aux bureaux de votre entreprise (Mobile)</strong>.<br/><br/>
+          <span style="color: var(--black); font-weight: 600;">Cochez vos options ci-dessous pour deviser votre projet en temps réel.</span>
+        </p>
+      </div>
+
+      <div class="pricing-deck">
+        <!-- Starter Card -->
+        <div class="price-layer-card reveal reveal-delay-1" id="pack-starter" data-base="2200" data-name="Starter">
+          <h3>Starter</h3>
+          <div class="base-price">2 200 € <span class="interval">/ mois</span></div>
+          <p class="desc">4 vidéos · 550 € / vidéo. L'idéal pour débuter et alimenter vos réseaux.</p>
+          <ul class="features">
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> 4 tournages par mois</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Montage dynamique inclus</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> 1 Retouche par vidéo</li>
+          </ul>
+          
+          <div class="card-options">
+            <h4>Options personnalisées</h4>
+            <label class="opt-toggle">
+              <input type="checkbox" value="120" data-mult="4">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Branding Visual (+120€/vid)</span>
+            </label>
+            <label class="opt-toggle">
+              <input type="checkbox" value="150" data-mult="1">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Mixage Audio Pro (+150€)</span>
+            </label>
+            <label class="opt-toggle">
+              <input type="checkbox" value="400" data-mult="1">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Jingle Musical sur-mesure (+400€)</span>
+            </label>
+          </div>
+
+          <div class="card-footer">
+            <div class="calc-total">Total : <strong class="display-total">2 200 €</strong></div>
+            <button class="submit-pack" data-pack="Starter — 2 200 €/mois">Sélectionner Starter →</button>
+          </div>
+        </div>
+
+        <!-- Pro Card -->
+        <div class="price-layer-card popular reveal reveal-delay-2" id="pack-pro" data-base="4000" data-name="Pro">
+          <div class="badge">LE PLUS CHOISI</div>
+          <h3>Pro</h3>
+          <div class="base-price">4 000 € <span class="interval">/ mois</span></div>
+          <p class="desc">8 vidéos · 500 € / vidéo. Croissance accélérée avec une forte présence en ligne.</p>
+          <ul class="features">
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> 8 tournages par mois</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Montage dynamique Premium</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> 3 Retouches par vidéo</li>
+          </ul>
+          
+          <div class="card-options">
+            <h4>Options personnalisées</h4>
+            <label class="opt-toggle">
+              <input type="checkbox" value="120" data-mult="8">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Branding Visual (+120€/vid)</span>
+            </label>
+            <label class="opt-toggle">
+              <input type="checkbox" value="150" data-mult="1">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Mixage Audio Pro (+150€)</span>
+            </label>
+            <label class="opt-toggle">
+              <input type="checkbox" value="400" data-mult="1">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Jingle Musical sur-mesure (+400€)</span>
+            </label>
+          </div>
+
+          <div class="card-footer">
+            <div class="calc-total">Total : <strong class="display-total">4 000 €</strong></div>
+            <button class="submit-pack" data-pack="Pro — 4 000 €/mois">Sélectionner Pro →</button>
+          </div>
+        </div>
+
+        <!-- Elite Card -->
+        <div class="price-layer-card reveal reveal-delay-3" id="pack-elite" data-base="5400" data-name="Elite">
+          <h3>Elite</h3>
+          <div class="base-price">5 400 € <span class="interval">/ mois</span></div>
+          <p class="desc">12 vidéos · 450 € / vidéo. Dominez votre marché avec du contenu de masse.</p>
+          <ul class="features">
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Tournage illimité (selon besoin)</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Montage ultra-dynamique</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Retouches illimitées</li>
+          </ul>
+          
+          <div class="card-options">
+            <h4>Options personnalisées</h4>
+            <label class="opt-toggle">
+              <input type="checkbox" value="120" data-mult="12">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Branding Visual (+120€/vid)</span>
+            </label>
+            <label class="opt-toggle">
+              <input type="checkbox" value="150" data-mult="1">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Mixage Audio Pro (+150€)</span>
+            </label>
+            <label class="opt-toggle">
+              <input type="checkbox" value="400" data-mult="1">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Jingle Musical sur-mesure (+400€)</span>
+            </label>
+          </div>
+
+          <div class="card-footer">
+            <div class="calc-total">Total : <strong class="display-total">5 400 €</strong></div>
+            <button class="submit-pack" data-pack="Elite — 5 400 €/mois">Sélectionner Elite →</button>
+          </div>
+        </div>
+
+        <!-- Podcast à la Séance Card (NEW) -->
+        <div class="price-layer-card podcast-session reveal reveal-delay-4" id="pack-podcast-session" data-base="900" data-name="Podcast Séance">
+          <div class="badge-session">🎙️ PODCAST À LA SÉANCE</div>
+          <h3>Podcast Session</h3>
+          <div class="base-price">900 € <span class="interval">/ séance</span></div>
+          <p class="desc">Tournage clé-en-main, à la demande. Parfait pour tester ou pour des épisodes ponctuels.</p>
+          <ul class="features">
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> 1 séance de tournage (2–4h)</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Multi-caméras 4K + son broadcast</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Jusqu'à 2 invités inclus</li>
+          </ul>
+          
+          <div class="card-options">
+            <h4>Options disponibles</h4>
+            <label class="opt-toggle">
+              <input type="checkbox" value="500" data-mult="1">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Montage Premium (+500€)</span>
+            </label>
+            <label class="opt-toggle">
+              <input type="checkbox" value="250" data-mult="1">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Pack 3 extraits réseaux (+250€)</span>
+            </label>
+            <label class="opt-toggle">
+              <input type="checkbox" value="200" data-mult="1">
+              <span class="toggle-box"></span>
+              <span class="opt-label">Habillage / Branding (+200€)</span>
+            </label>
+          </div>
+
+          <div class="card-footer">
+            <div class="calc-total">Total : <strong class="display-total">900 €</strong></div>
+            <button class="submit-pack" data-pack="Podcast Session — 900 €/séance">Réserver une séance →</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- L'assistant Chatbot Embed -->
+      <div class="chatbot-wrapper reveal reveal-delay-4" style="margin-top: 80px;">
+        <div class="chatbot-ui">
+          <div class="chat-header">
+            <div class="chat-avatar">LL</div>
+            <div>
+              <h3 style="margin:0; font-size:1.1rem;">Besoin d'un projet sur-mesure ?</h3>
+              <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">Notre assistant vous génère un devis PDF en 1 min.</p>
+            </div>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div class="chat-msg bot-msg">
+              Bonjour ! 👋 Quel type de contenu souhaitez-vous réaliser aujourd'hui ?
+            </div>
+            <div class="chat-choices">
+              <button class="chat-btn" data-type="Podcast">Podcast Vidéo</button>
+              <button class="chat-btn" data-type="Émission">Émission Plateau</button>
+              <button class="chat-btn" data-type="Clips">Clips Musicaux</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Ils nous font confiance</span>
+        <h2>Des entreprises, des créateurs, des dirigeants.</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">MD</div>
+            <div class="testimonial-info">
+              <h4>Marie Dupont</h4>
+              <span>CEO, TechStartup</span>
+            </div>
+          </div>
+          <p>"Studio monté en 30 min, qualité cinéma. Exactement ce qu'il nous fallait."</p>
+          <div class="testimonial-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">TM</div>
+            <div class="testimonial-info">
+              <h4>Thomas Martin</h4>
+              <span>Dir. Marketing, MediaGroup</span>
+            </div>
+          </div>
+          <p>"Son impeccable, rendu pro. On recommande les yeux fermés."</p>
+          <div class="testimonial-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">SB</div>
+            <div class="testimonial-info">
+              <h4>Sophie Bernard</h4>
+              <span>Fondatrice, CreativeAgency</span>
+            </div>
+          </div>
+          <p>"Flexibles, réactifs, et le résultat parle de lui-même. Une vraie agence."</p>
+          <div class="testimonial-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARCOURS CLIENT (BENTO GRID) ===== -->
+  <section class="bento-journey" id="howItWorks">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Le Parcours Lead Live</span>
+        <h2>De l'idée à la livraison,<br/>sans friction.</h2>
+        <p style="color: var(--text-muted); margin-top: 20px; font-size: 1.15rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          On a éliminé toutes les complexités de la production audiovisuelle. Vous venez avec un message, nous gérons tout le reste.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Div 1 -->
+        <div class="bento-card bg-dark reveal reveal-delay-1" id="bento-1">
+          <div class="bento-content">
+            <span class="bento-step">Étape 01</span>
+            <h3>Brief & Stratégie</h3>
+            <p>On discute de votre projet : podcast, émission, ou réseaux sociaux. On définit ensemble l'angle, le format et l'ambiance.</p>
+          </div>
+        </div>
+
+        <!-- Div 2 -->
+        <div class="bento-card bg-image reveal reveal-delay-2" id="bento-2" style="background-image: url('images/bento.jpg');">
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <span class="bento-step">Étape 02</span>
+            <h3>Studio Parisien<br>ou Chez Vous (Mobile)</h3>
+            <p>Vous souhaitez vous déplacer dans nos locaux (Paris) ? Très bien.<br>Vous préférez qu'on installe le setup chez vous en 30 minutes ? C'est aussi possible.</p>
+          </div>
+        </div>
+
+        <!-- Div 3 -->
+        <div class="bento-card bg-light reveal reveal-delay-3" id="bento-3">
+          <div class="bento-content">
+            <span class="bento-step">Étape 03</span>
+            <h3>Moteur, Action.</h3>
+            <p>Son broadcast, cadrage cinéma, multi-caméras 4K. Vous n'avez qu'à vous asseoir et performer.</p>
+          </div>
+        </div>
+
+        <!-- Div 4 -->
+        <div class="bento-card bg-dark reveal reveal-delay-4" id="bento-4">
+          <div class="bento-content">
+            <span class="bento-step">Étape 04</span>
+            <h3>Post-Production Premium</h3>
+            <p>Montage multi-cam, étalonnage, mixage mastering, et déclinaison TikTok / Reels. Livraison ultra-rapide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ SECTION ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">FAQ</span>
+        <h2>Vous avez des questions ? On a les réponses.</h2>
+      </div>
+
+      <div class="faq-contact reveal">
+        <div class="faq-contact-item">
+          <div class="faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div>
+            <div class="faq-label">Email</div>
+            <span>contact@leadlive.fr</span>
+          </div>
+        </div>
+        <div class="faq-contact-item">
+          <div class="faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="faq-label">Téléphone</div>
+            <span><a href="tel:0616435797">06 16 43 57 97</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-list" id="faqList">
+        <div class="faq-item active">
+          <button class="faq-question" aria-expanded="true" id="faqBtn1">
+            C'est quoi Lead Live exactement ?
+            <span class="faq-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Lead Live, c'est une agence de production audiovisuelle mobile. On installe un studio professionnel directement chez vous — bureau, domicile ou lieu de votre choix — pour tourner votre podcast, émission, ou vidéo réseaux sociaux. De l'installation au montage final, on gère tout.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faqBtn2">
+            Vous vous déplacez partout ?
+            <span class="faq-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>On intervient sur tout Paris et l'Île-de-France. Pour les tournages en dehors de cette zone, c'est possible aussi — contactez-nous pour un devis sur mesure. On s'adapte à votre lieu, pas l'inverse.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faqBtn3">
+            Qu'est-ce qui est inclus dans la prestation ?
+            <span class="faq-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Déplacement, installation du studio, matériel pro (caméras, micros, éclairage), équipe technique complète et tournage multi-caméras. Le montage, sous-titrage et habillage sont inclus ou en option selon la formule choisie.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faqBtn4">
+            Je peux faire un podcast régulier avec vous ?
+            <span class="faq-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolument ! C'est même notre spécialité. On propose des formules récurrentes pour les podcasts hebdos ou mensuels. On vient chez vous à chaque session avec le même setup pro — vous n'avez qu'à recevoir vos invités.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG SECTION ===== -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="section-header">
+        <div class="reveal">
+          <span class="section-label">Le Journal</span>
+          <h2>Tips, insights & coulisses</h2>
+        </div>
+        <a href="blogs.html" class="btn-secondary reveal">
+          Tous les articles
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="blog-grid">
+        <a href="#" class="blog-card reveal reveal-delay-1">
+          <div class="blog-image">
+            <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?q=80&w=600&auto=format&fit=crop" alt="Lancer un podcast pour votre business" loading="lazy">
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              23 avr. 2025
+            </div>
+            <h3>Podcast d'entreprise : pourquoi c'est le meilleur investissement en 2025</h3>
+            <span class="blog-link">
+              Lire l'article
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card reveal reveal-delay-2">
+          <div class="blog-image">
+            <img src="https://images.unsplash.com/photo-1516280440502-86927d2c3e1e?q=80&w=600&auto=format&fit=crop" alt="L'avenir du podcast en 2025" loading="lazy">
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              14 avr. 2025
+            </div>
+            <h3>Studio mobile vs studio fixe : pourquoi les marques changent</h3>
+            <span class="blog-link">
+              Lire l'article
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card reveal reveal-delay-3">
+          <div class="blog-image">
+            <img src="https://images.unsplash.com/photo-1622359487771-b0e6dfb086e3?q=80&w=600&auto=format&fit=crop" alt="Faire grandir son audience podcast" loading="lazy">
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              16 avr. 2025
+            </div>
+            <h3>Comment créer des formats courts réseaux sociaux qui performent</h3>
+            <span class="blog-link">
+              Lire l'article
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-big-text">Votre studio, où vous voulez.</div>
+
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Lead Live<span class="logo-dot" style="background: var(--accent-green);"></span></a>
+          <p>Agence de production audiovisuelle mobile. Podcast, émission, réseaux sociaux, clips — on installe le studio chez vous et on gère tout.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="blogs.html">Blog</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+            <li><a href="cgi.html">Mentions Légales (CGI)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Suivez-nous</h4>
+          <ul>
+            <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Lead Live. Tous droits réservés. — <a href="cgv.html" style="color: inherit;">CGV</a> · <a href="cgi.html" style="color: inherit;">Mentions légales</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <!-- ===== FORMAT DETAIL MODAL ===== -->
+  <div class="format-modal-overlay" id="formatModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="format-modal">
+      <button class="format-modal-close" id="modalClose" aria-label="Fermer">✕</button>
+      <div class="modal-tag" id="modalTag">Format</div>
+      <h3 id="modalTitle">Titre du format</h3>
+      <p id="modalDesc">Description du format.</p>
+      <ul class="modal-features" id="modalFeatures"></ul>
+      <a href="configurateur.html" class="btn-primary" style="width: 100%; justify-content: center;">
+        Obtenir un devis
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

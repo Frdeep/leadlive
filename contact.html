@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Lead Live</title>
+  <meta name="description" content="Contactez Lead Live pour réserver votre session de création de contenu à Paris.">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+  <style>
+    .contact-hero { padding: 160px 0 80px; background: var(--white); text-align: center; }
+    .contact-hero h1 { font-family: var(--font-primary); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 16px; color: var(--dark-text); }
+    .contact-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+    .contact-section { padding: 0 0 120px; background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contact-info-cards { display: flex; flex-direction: column; gap: 20px; }
+    .contact-card { background: var(--off-white); border: 1px solid var(--light-border); border-radius: var(--radius-xl); padding: 32px; transition: all var(--transition-normal); }
+    .contact-card:hover { border-color: var(--accent-green); }
+    .contact-card .card-icon { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--black); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .contact-card .card-icon svg { width: 22px; height: 22px; color: var(--white); }
+    .contact-card h3 { font-family: var(--font-primary); font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--dark-text); }
+    .contact-card p { color: var(--text-muted); font-size: 0.9rem; }
+    .contact-card a { color: var(--accent-blue); font-weight: 600; }
+    .contact-form { background: var(--off-white); border: 1px solid var(--light-border); border-radius: var(--radius-xl); padding: 40px; }
+    .contact-form h3 { font-family: var(--font-primary); font-size: 1.3rem; font-weight: 700; margin-bottom: 24px; color: var(--dark-text); }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--body-text); margin-bottom: 8px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; background: var(--white); border: 1px solid var(--light-border); border-radius: var(--radius-sm); color: var(--dark-text); font-family: var(--font-body); font-size: 0.9rem; transition: border-color var(--transition-normal); outline: none; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--accent-blue); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="header scrolled" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">Lead Live<span class="logo-dot"></span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Accueil</a>
+        <a href="contact.html">Contact</a>
+        <a href="blogs.html">Blog</a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:0616435797" class="btn-login">06 16 43 57 97</a>
+        <a href="#contactForm" class="btn-primary">
+          Prendre contact
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <section class="contact-hero">
+    <div class="container">
+      <h1>On discute ?</h1>
+      <p>Une question, un projet, une idée — on est là pour vous aider à concrétiser le tout.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info-cards">
+          <div class="contact-card">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <h3>Email</h3>
+            <p><a href="mailto:hello@leadlive.studio">hello@leadlive.studio</a></p>
+          </div>
+          <div class="contact-card">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h3>Téléphone</h3>
+            <p><a href="tel:0616435797">06 16 43 57 97</a></p>
+          </div>
+          <div class="contact-card">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>On est là</h3>
+            <p>Paris 9ème arrondissement<br>7j/7 — 9h à 22h</p>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Envoyez-nous un message</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group"><label for="firstName">Prénom</label><input type="text" id="firstName" placeholder="Votre prénom" required></div>
+              <div class="form-group"><label for="lastName">Nom</label><input type="text" id="lastName" placeholder="Votre nom" required></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="votre@email.com" required></div>
+              <div class="form-group"><label for="phone">Téléphone</label><input type="tel" id="phone" placeholder="06 XX XX XX XX"></div>
+            </div>
+            <div class="form-group"><label for="subject">Sujet</label><select id="subject"><option value="">Sélectionnez un sujet</option><option value="reservation">Réservation</option><option value="info">Question</option><option value="partnership">Partenariat</option><option value="other">Autre</option></select></div>
+            <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Dites-nous tout..." required></textarea></div>
+            <button type="submit" class="btn-primary" id="contactSubmitBtn" style="width: 100%; justify-content: center;">Envoyer <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m22 2-7 20-4-9-9-4Z"/><path d="m22 2-11 11"/></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-big-text">Votre studio de création, en plein Paris.</div>
+      <div class="footer-content">
+        <div class="footer-brand"><a href="index.html" class="logo">Lead Live<span class="logo-dot" style="background: var(--accent-green);"></span></a><p>Studios de création de contenu premium à Paris.</p></div>
+        <div class="footer-column"><h4>Pages</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-column"><h4>Ressources</h4><ul><li><a href="blogs.html">Blog</a></li><li><a href="#">CGV</a></li></ul></div>
+        <div class="footer-column"><h4>Suivez-nous</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Lead Live. Tous droits réservés.</p></div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
