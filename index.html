@@ -127,17 +127,19 @@
 
       <!-- Panel 1: Session -->
       <div class="pricing-panel" id="panel-session">
-        <div class="pricing-deck pricing-deck-single">
-          <div class="price-layer-card podcast-session reveal reveal-delay-1" id="pack-podcast-session" data-base="900" data-name="Podcast Session">
-            <div class="badge-session">🎤 PODCAST À LA SÉANCE</div>
-            <h3>Session Podcast</h3>
-            <div class="base-price">900&nbsp;€ <span class="interval">/ session</span></div>
-            <p class="desc">Tournage multi-cam à la demande. 2 à 4h de production, tout inclus.</p>
+        <div class="pricing-deck">
+          
+          <!-- Card 1: Audio -->
+          <div class="price-layer-card podcast-session reveal reveal-delay-1" id="pack-audio" data-base="150" data-name="Session 1h (Audio)">
+            <div class="badge-session">🎧 STUDIO AUDIO</div>
+            <h3>Session 1h</h3>
+            <div class="base-price">150&nbsp;€ <span class="interval">/ h</span></div>
+            <p class="desc">L'essentiel pour un son parfait : enregistrement voix premium, sans vidéo.</p>
             <ul class="features">
-              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> 1 séance de tournage (2-4h)</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Multi-caméras 4K + son broadcast</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Jusqu'à 2 invités inclus</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Installation studio en 30 min</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> 1 heure d'enregistrement studio</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Micros pros (Shure SM7B)</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Jusqu'à 4 participants</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Livraison des pistes audio brutes</li>
             </ul>
             <div class="card-options">
               <h4>Options à la carte</h4>
@@ -153,10 +155,73 @@
               <label class="opt-toggle"><input type="checkbox" value="150" data-mult="1"><span class="toggle-box"></span><span class="opt-label">🎨 Habillage / Branding (+150 à 300€)</span></label>
               <p class="opt-hint">Titres animés, logo, sous-titres stylisés, identité visuelle.</p>
               <label class="opt-toggle"><input type="checkbox" value="200" data-mult="1"><span class="toggle-box"></span><span class="opt-label">⚡ Livraison express (+200€)</span></label>
-              <p class="opt-hint">Traitement prioritaire pour les contenus urgents.</p>
+              <p class="opt-hint">Traitement prioritaire pour contenus urgents.</p>
             </div>
-            <div class="card-footer"><div class="calc-total">Total : <strong class="display-total">900&nbsp;€</strong></div><button class="submit-pack" data-pack="Session Podcast — 900 €/session">📄 Obtenir un devis →</button></div>
+            <div class="card-footer"><div class="calc-total">Total : <strong class="display-total">150&nbsp;€</strong></div><button class="submit-pack" data-pack="Session 1h Audio — 150 €/h">📄 Obtenir un devis →</button></div>
           </div>
+
+          <!-- Card 2: Vidéo -->
+          <div class="price-layer-card podcast-session popular reveal reveal-delay-2" id="pack-video" data-base="250" data-name="Session 1h (Vidéo)">
+            <div class="badge">LE PLUS CHOISI</div>
+            <h3>Session 1h + Vidéo</h3>
+            <div class="base-price">250&nbsp;€ <span class="interval">/ h</span></div>
+            <p class="desc">Le format idéal pour YouTube et les réseaux : son premium + 2 caméras 4K.</p>
+            <ul class="features">
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> 1 heure d'enregistrement vidéo</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> 2 caméras 4K &amp; éclairage pro</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Ingénieur son / Cadreur</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Livraison fichiers vidéo/audio bruts</li>
+            </ul>
+            <div class="card-options">
+              <h4>Options à la carte</h4>
+              <label class="opt-toggle"><input type="checkbox" value="500" data-mult="1"><span class="toggle-box"></span><span class="opt-label">✂️ Montage premium (+500€)</span></label>
+              <p class="opt-hint">Multicam, nettoyage audio, cut dynamique, export prêt à diffusion.</p>
+              <label class="opt-toggle"><input type="checkbox" value="300" data-mult="1"><span class="toggle-box"></span><span class="opt-label">🔴 Diffusion live (+300€)</span></label>
+              <p class="opt-hint">Streaming en direct, gestion technique du flux.</p>
+              <label class="opt-toggle"><input type="checkbox" value="150" data-mult="1"><span class="toggle-box"></span><span class="opt-label">🎥 Caméra supplémentaire (+150€)</span></label>
+              <p class="opt-hint">Angle additionnel pour un rendu plus immersif.</p>
+              <label class="opt-toggle"><input type="checkbox" value="250" data-mult="1" class="exclusive-extraits"><span class="toggle-box"></span><span class="opt-label">📱 3 extraits réseaux (+250€)</span></label>
+              <label class="opt-toggle"><input type="checkbox" value="400" data-mult="1" class="exclusive-extraits"><span class="toggle-box"></span><span class="opt-label">📱 5 extraits réseaux (+400€)</span></label>
+              <p class="opt-hint">Formats verticaux optimisés TikTok / Instagram / Shorts.</p>
+              <label class="opt-toggle"><input type="checkbox" value="150" data-mult="1"><span class="toggle-box"></span><span class="opt-label">🎨 Habillage / Branding (+150 à 300€)</span></label>
+              <p class="opt-hint">Titres animés, logo, sous-titres stylisés, identité visuelle.</p>
+              <label class="opt-toggle"><input type="checkbox" value="200" data-mult="1"><span class="toggle-box"></span><span class="opt-label">⚡ Livraison express (+200€)</span></label>
+              <p class="opt-hint">Traitement prioritaire pour contenus urgents.</p>
+            </div>
+            <div class="card-footer"><div class="calc-total">Total : <strong class="display-total">250&nbsp;€</strong></div><button class="submit-pack" data-pack="Session 1h Vidéo — 250 €/h">📄 Obtenir un devis →</button></div>
+          </div>
+
+          <!-- Card 3: Premium Multicam -->
+          <div class="price-layer-card podcast-session reveal reveal-delay-3" id="pack-premium" data-base="350" data-name="Session 1h (Premium Multicam)">
+            <div class="badge-session">🎬 MULTICAM PREMIUM</div>
+            <h3>Session 1h Premium</h3>
+            <div class="base-price">350&nbsp;€ <span class="interval">/ h</span></div>
+            <p class="desc">Qualité TV : réalisation en direct avec 3-4 caméras, prêt à diffuser.</p>
+            <ul class="features">
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Réalisation vidéo en direct</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> 3 à 4 caméras 4K &amp; éclairage avancé</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Équipe : Réalisateur + Ingé son</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="check-icon"><polyline points="20 6 9 17 4 12"/></svg> Livraison du fichier pré-monté</li>
+            </ul>
+            <div class="card-options">
+              <h4>Options à la carte</h4>
+              <label class="opt-toggle"><input type="checkbox" value="500" data-mult="1"><span class="toggle-box"></span><span class="opt-label">✂️ Montage premium (+500€)</span></label>
+              <p class="opt-hint">Multicam, nettoyage audio, cut dynamique, export prêt à diffusion.</p>
+              <label class="opt-toggle"><input type="checkbox" value="300" data-mult="1"><span class="toggle-box"></span><span class="opt-label">🔴 Diffusion live (+300€)</span></label>
+              <p class="opt-hint">Streaming en direct, gestion technique du flux.</p>
+              <label class="opt-toggle"><input type="checkbox" value="150" data-mult="1"><span class="toggle-box"></span><span class="opt-label">🎥 Caméra supplémentaire (+150€)</span></label>
+              <p class="opt-hint">Angle additionnel pour un rendu plus immersif.</p>
+              <label class="opt-toggle"><input type="checkbox" value="250" data-mult="1" class="exclusive-extraits"><span class="toggle-box"></span><span class="opt-label">📱 3 extraits réseaux (+250€)</span></label>
+              <label class="opt-toggle"><input type="checkbox" value="400" data-mult="1" class="exclusive-extraits"><span class="toggle-box"></span><span class="opt-label">📱 5 extraits réseaux (+400€)</span></label>
+              <p class="opt-hint">Formats verticaux optimisés TikTok / Instagram / Shorts.</p>
+              <label class="opt-toggle"><input type="checkbox" value="150" data-mult="1"><span class="toggle-box"></span><span class="opt-label">🎨 Habillage / Branding (+150 à 300€)</span></label>
+              <p class="opt-hint">Titres animés, logo, sous-titres stylisés, identité visuelle.</p>
+              <label class="opt-toggle"><input type="checkbox" value="200" data-mult="1"><span class="toggle-box"></span><span class="opt-label">⚡ Livraison express (+200€)</span></label>
+              <p class="opt-hint">Traitement prioritaire pour contenus urgents.</p>
+            </div>
+            <div class="card-footer"><div class="calc-total">Total : <strong class="display-total">350&nbsp;€</strong></div><button class="submit-pack" data-pack="Session 1h Premium — 350 €/h">📄 Obtenir un devis →</button></div>
+          </div>
+          
         </div>
       </div>
 
@@ -253,7 +318,7 @@
     document.addEventListener('DOMContentLoaded',function(){
       document.querySelectorAll('.pricing-tab').forEach(function(tab){tab.addEventListener('click',function(){document.querySelectorAll('.pricing-tab').forEach(function(t){t.classList.remove('active');});tab.classList.add('active');var target=tab.dataset.target;document.querySelectorAll('.pricing-panel').forEach(function(p){p.style.display=p.id===target?'block':'none';});});});
       document.querySelectorAll('.submit-pack').forEach(function(btn){btn.addEventListener('click',function(e){e.preventDefault();window.location.href='configurateur.html';});});
-      document.querySelectorAll('.exclusive-extraits').forEach(function(cb){cb.addEventListener('change',function(){if(this.checked){document.querySelectorAll('.exclusive-extraits').forEach(function(other){if(other!==cb)other.checked=false;});}});});
+      document.querySelectorAll('.exclusive-extraits').forEach(function(cb){cb.addEventListener('change',function(){if(this.checked){var parent=cb.closest('.card-options');parent.querySelectorAll('.exclusive-extraits').forEach(function(other){if(other!==cb)other.checked=false;});}});});
       var slider=document.getElementById('studiosSlider'),nav=document.getElementById('studiosNav');if(slider&&nav){var cards=slider.querySelectorAll('.studio-card');cards.forEach(function(_,i){var dot=document.createElement('button');dot.className='studios-nav-dot'+(i===0?' active':'');dot.setAttribute('aria-label','Slide '+(i+1));dot.addEventListener('click',function(){cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});});nav.appendChild(dot);});slider.addEventListener('scroll',function(){var scrollLeft=slider.scrollLeft;var cardWidth=cards[0].offsetWidth+24;var activeIndex=Math.round(scrollLeft/cardWidth);nav.querySelectorAll('.studios-nav-dot').forEach(function(d,i){d.classList.toggle('active',i===activeIndex);});});}
     });
   </script>
