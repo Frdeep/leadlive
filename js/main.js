@@ -4,51 +4,6 @@
    Modal des formats + Contact form + chatbot
    ============================================ */
 
-// ---------- YOUTUBE IFRAME API ----------
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-document.head.appendChild(tag);
-
-let ytPlayer = null;
-let isMuted = true;
-
-function onYouTubeIframeAPIReady() {
-  ytPlayer = new YT.Player('yt-player', {
-    width:  '100%',
-    height: '100%',
-    videoId: '4sh7rP7Tfmg',
-    playerVars: {
-      autoplay:        1,
-      mute:            1,
-      loop:            1,
-      playlist:        '4sh7rP7Tfmg',
-      controls:        0,
-      showinfo:        0,
-      modestbranding:  1,
-      rel:             0,
-      iv_load_policy:  3,
-      disablekb:       1,
-      fs:              0,
-      playsinline:     1,
-      origin:          window.location.origin
-    },
-    events: {
-      onReady:       onPlayerReady,
-      onStateChange: onPlayerStateChange
-    }
-  });
-}
-
-function onPlayerReady(event) {
-  event.target.playVideo();
-}
-
-function onPlayerStateChange(event) {
-  if (event.data === YT.PlayerState.ENDED) {
-    ytPlayer.playVideo();
-  }
-}
-
 // ---------- DOM READY ----------
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('js-loaded');
@@ -507,8 +462,13 @@ document.addEventListener('DOMContentLoaded', () => {
           const phoneVal = document.getElementById('chatPhone').value.trim();
           const nameVal  = document.getElementById('chatName').value.trim();
 
-          if (!emailVal) {
-            document.getElementById('chatEmail').style.borderColor = 'red';
+          // Reset borders
+          document.getElementById('chatEmail').style.borderColor = 'var(--border-color)';
+          document.getElementById('chatPhone').style.borderColor = 'var(--border-color)';
+
+          if (!emailVal || !phoneVal) {
+            if (!emailVal) document.getElementById('chatEmail').style.borderColor = 'red';
+            if (!phoneVal) document.getElementById('chatPhone').style.borderColor = 'red';
             return;
           }
 
