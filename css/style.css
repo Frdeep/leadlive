@@ -2677,31 +2677,35 @@ button {
     font-size: 0.9rem;
   }
   
-  .pricing-deck {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-  }
-  
   .cta-final { padding: 80px 0; }
   .cta-final-buttons { flex-direction: column; align-items: center; }
-  
-  .floating-cta {
-    bottom: 20px;
-    right: 20px;
-    width: 52px;
-    height: 52px;
-  }
-  
-  .floating-cta svg {
-    width: 24px;
-    height: 24px;
-  }
 }
 
 @media (max-width: 1024px) {
   .pricing-deck {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 30px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pricing-deck::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .pricing-deck::-webkit-scrollbar-thumb {
+    background: var(--light-border);
+    border-radius: 4px;
+  }
+
+  .price-layer-card {
+    min-width: 85%;
+    max-width: 450px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    margin: 0;
   }
 }
